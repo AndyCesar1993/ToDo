@@ -1,6 +1,6 @@
 import { useState } from "react";
 import InputToDo from "../InputToDo/InputToDo"
-import RenderToDo from "./renderToDo/renderToDo"
+import RenderToDo from "../RenderToDo/RenderToDo"
 
 
 const Container = () => {
