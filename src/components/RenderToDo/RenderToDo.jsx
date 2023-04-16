@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { UlStyled,LiStyled,ErrorStyled,ClearAllStyled } from "./renderToDoStyled"
 import DeleteIcon from '@mui/icons-material/Delete';
 
@@ -8,7 +7,7 @@ const RenderToDo = props => {
   
   localStorage.setItem('tasks', JSON.stringify(list))
 
- 
+
   const tasks = list.map((task) => <LiStyled key={task.id}>{task.taskValue} </LiStyled>);
   
     
@@ -16,8 +15,6 @@ const RenderToDo = props => {
     setList([])
     
   }
-
-  
 
   return (
     <UlStyled>

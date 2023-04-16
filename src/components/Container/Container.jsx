@@ -5,13 +5,13 @@ import RenderToDo from "../renderToDo/renderToDo"
 
 const Container = () => {
 
-const allTasks = JSON.parse(localStorage.getItem('tasks'));
+    const allTasks = JSON.parse(localStorage.getItem('tasks'));
 
-const [list,setList]= useState(allTasks);
+    const [list,setList]= useState(allTasks);
 
-const handleAddItem = addItem =>{
-    setList([...list,addItem])
-};
+    const handleAddItem = addItem =>{
+        setList([...list,addItem])
+    };
 
     return (
         <div>
