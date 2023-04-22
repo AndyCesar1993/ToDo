@@ -1,12 +1,16 @@
-import './App.css'
-import Container from './components/Container/Container'
-
+import  GlobalStyles  from './GlobalStyles/GlobalStyles'
+import RoutesContainer from './Routes/RoutesContainer'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
 
   return (
     <>
-      <Container/>
+      <GlobalStyles/>
+      <BrowserRouter>
+        <RoutesContainer/>
+      </BrowserRouter>
+      
     </>
   )
 }

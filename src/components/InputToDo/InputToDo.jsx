@@ -1,21 +1,16 @@
 
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { FormStyled,InputStyled } from "./InputToDoStyled"
+import { Contexto } from "../Contexto/Contexto";
 
-const InputToDo = props => {
-
-const { handleAddItem } = props;
+const InputToDo = () => {
+    const { tasksTodo, setTasksTodo } =useContext(Contexto);
 
 const [taskValue,setTaskValue] = useState("");
 
 const setToDo = e =>{
     e.preventDefault();
-
-    handleAddItem({
-        id: (+new Date()).toString(),
-        taskValue
-    });
-    
+    setTasksTodo([...tasksTodo,{taskValue, id:(+new Date()).toString()}])
     setTaskValue("")
 }   
 
