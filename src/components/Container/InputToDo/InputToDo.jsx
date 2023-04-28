@@ -1,16 +1,17 @@
 
-import { useContext, useState } from "react"
+import { useState } from "react"
 import { FormStyled,InputStyled } from "./InputToDoStyled"
-import { Contexto } from "../Contexto/Contexto";
+import { useDispatch } from "react-redux";
+import { addTask } from "../../redux/toDoSlice";
 
 const InputToDo = () => {
-    const { tasksTodo, setTasksTodo } =useContext(Contexto);
 
 const [taskValue,setTaskValue] = useState("");
+const dispatch = useDispatch()
 
 const setToDo = e =>{
     e.preventDefault();
-    setTasksTodo([...tasksTodo,{taskValue, id:(+new Date()).toString()}])
+    dispatch(addTask({taskValue}))
     setTaskValue("")
 }   
 

@@ -4,12 +4,13 @@ import PokeBola from '../assets/pokeball.png'
 import HomeIcon from '@mui/icons-material/Home';
 import NoTasks from '@mui/icons-material/PlaylistRemove';
 import Tasks from '@mui/icons-material/PlaylistAddCheck';
-import { useContext } from "react";
-import { Contexto } from "../Contexto/Contexto";
+import { useSelector } from "react-redux";
+import { getTask } from "../redux/toDoSlice";
 
 
 const NavBar = () => {
-    const {tasksTodo} = useContext(Contexto)
+    const tasksTodo = (useSelector(getTask)).payload;
+
     return (
         <DivStyled>
             <img style={{width:'50px'}} src={Logo} alt="" />
